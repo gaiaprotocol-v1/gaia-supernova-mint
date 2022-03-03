@@ -1,0 +1,620 @@
+/*
+https://github.com/Hanul/sky-css-base
+v0.0.1 | 20210109
+Author: Sim Young Jae
+License: MIT
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+*,
+*:focus {
+  outline: 0;
+}
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+a,
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+  cursor: pointer;
+}
+button,
+input {
+  border: none;
+}
+[hidden] {
+  display: none !important;
+}
+[contenteditable] {
+  -webkit-tap-highlight-color: transparent;
+}
+.float-wrapper:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+@font-face {
+  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css");
+  @import url("https://p.typekit.net/p.css?s=1&k=zoc8uhz&ht=tk&f=15665.15666&a=43843172&app=typekit&e=css");
+}
+body {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  background: black;
+  color: white;
+  margin: auto;
+}
+.popup-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 20px 0;
+}
+.dialogue.alert {
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  margin: auto;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.dialogue.alert > h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 16px;
+}
+.dialogue.alert > p {
+  padding-left: 16px;
+  padding-top: 8px;
+  font-size: 0.875rem;
+  line-height: 1.2em;
+}
+.dialogue.alert > .button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+.dialogue.alert > .button-container > button {
+  background-color: transparent;
+  color: white;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+.dialogue.alert > .button-container > button:hover {
+  background-color: rgba(153, 0, 19, 0.5);
+}
+.dialogue.alert > .button-container > button:active {
+  background-color: #990013;
+}
+.dialogue.confirm {
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  margin: auto;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.dialogue.confirm > h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 16px;
+}
+.dialogue.confirm > p {
+  padding-left: 16px;
+  padding-top: 8px;
+  font-size: 0.875rem;
+  line-height: 1.2em;
+}
+.dialogue.confirm > .button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+.dialogue.confirm > .button-container > button {
+  background-color: transparent;
+  color: black;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+.dialogue.confirm > .button-container > button:hover {
+  background-color: rgba(153, 0, 19, 0.8);
+}
+.dialogue.confirm > .button-container > button:active {
+  background-color: #990013;
+}
+.dialogue.prompt {
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  margin: auto;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.dialogue.prompt > h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 16px;
+}
+.dialogue.prompt > p {
+  padding-left: 16px;
+  padding-top: 8px;
+  font-size: 0.875rem;
+  line-height: 1.2em;
+}
+.dialogue.prompt > .input-container {
+  margin-top: 16px;
+  padding: 0 16px;
+}
+.dialogue.prompt > .input-container > input {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px;
+  height: 36px;
+  border: 1px solid #e4e8eb;
+}
+.dialogue.prompt > .input-container > input:hover {
+  border: 1px solid #990013;
+}
+.dialogue.prompt > .input-container > input:focus {
+  border: 1px solid #990013;
+}
+.dialogue.prompt > .button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+.dialogue.prompt > .button-container > button {
+  background-color: transparent;
+  color: black;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+.dialogue.prompt > .button-container > button:hover {
+  background-color: rgba(153, 0, 19, 0.8);
+}
+.dialogue.prompt > .button-container > button:active {
+  background-color: #990013;
+}
+.connect-wallet-popup {
+  position: relative;
+  max-width: 420px;
+  width: 90%;
+  margin: auto;
+  border-radius: 4px;
+  background-color: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.connect-wallet-popup > h2 {
+  font-size: 24px;
+  padding: 16px;
+}
+.connect-wallet-popup > p {
+  padding: 16px;
+  border-top: 1px solid #CCC;
+  color: #CCC;
+}
+.connect-wallet-popup > .button-container {
+  padding: 16px;
+}
+.connect-wallet-popup > .button-container > a {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.connect-wallet-popup > .button-container > a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  color: white;
+}
+.connect-wallet-popup > .button-container > a > img {
+  margin-right: 10px;
+}
+.connect-wallet-popup > .button-container > .connect-kaikas-button {
+  background-color: #6f6558;
+  color: #ffffff;
+}
+.connect-wallet-popup > .button-container > .connect-klip-button {
+  background-color: #fee500;
+  color: #000000;
+}
+.connect-wallet-popup > .button-container > .cancel-button {
+  border: 1px solid #ffffff;
+}
+.klip-qr-popup {
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  margin: auto;
+  border-radius: 4px;
+  background-color: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.klip-qr-popup > h2 {
+  font-size: 24px;
+  padding: 16px;
+}
+.klip-qr-popup > .qr {
+  border-top: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  padding: 16px 0;
+  text-align: center;
+}
+.klip-qr-popup > p {
+  margin-top: 16px;
+  padding: 0 16px;
+  color: white;
+}
+.klip-qr-popup > .button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+.klip-qr-popup > .button-container > button {
+  background-color: transparent;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+.klip-qr-popup > .button-container > button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.home-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1240px;
+  margin: auto;
+  background-position-x: 50%;
+  background-position-y: 15%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  text-align: center;
+  padding-bottom: 4rem;
+}
+@media only screen and (max-width: 719px) {
+  .home-view {
+    padding: 8px;
+  }
+}
+.home-view > h1 {
+  font-family: trajan-pro-3, serif;
+  font-weight: 700;
+  font-size: 4rem;
+  text-shadow: 2px 2px black;
+  padding-top: 4rem;
+  color: #990013;
+}
+.home-view > .caption {
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: #CCCCCC;
+  text-shadow: 0.5px 0.5px black;
+  padding-top: 16px;
+}
+.home-view > .price {
+  font-weight: 500;
+  font-size: 1rem;
+  text-shadow: 0.5px 0.5px black;
+  margin-top: 16px;
+}
+.home-view > .language-select {
+  background-color: transparent;
+  color: white;
+  border: none;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.home-view > .language-select > option {
+  background-color: black;
+}
+.home-view > .logo {
+  max-width: 30%;
+  transform-origin: 50% 50%;
+  margin: 2rem;
+}
+@media only screen and (max-width: 719px) {
+  .home-view > .logo {
+    max-width: 70%;
+  }
+}
+.home-view > .mint-info {
+  max-width: 620px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.home-view > .mint-info > .progress-text {
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-shadow: 0.5px 0.5px black;
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+.home-view > .progress {
+  margin: 4px;
+  padding: 1px;
+  width: 100%;
+  max-width: 620px;
+  border: 1px solid #990013;
+  border-radius: 8px;
+  height: 32px;
+}
+.home-view > .progress > .progress__bar {
+  height: 100%;
+  width: 0%;
+  background: #990013;
+  border-radius: 8px;
+  animation: load_bar 5s infinite alternate;
+}
+.home-view > .progress > .bar-step {
+  left: 41.5%;
+  position: absolute;
+  margin-top: -40px;
+  z-index: 1;
+  font-size: 0.5rem;
+  color: #CCCCCC;
+  text-shadow: 0.5px 0.5px black;
+}
+@media only screen and (max-width: 719px) {
+  .home-view > .progress > .bar-step {
+    left: 29%;
+  }
+}
+.home-view > .progress > .bar-step > .label {
+  float: left;
+  margin-right: 5px;
+}
+.home-view > .progress > .bar-step > .percent {
+  float: right;
+  margin-left: 5px;
+}
+.home-view > .progress > .bar-step > .line {
+  float: right;
+  background: #b19c76;
+  box-shadow: 1px 1px black;
+  height: 45px;
+  width: 1px;
+  border-radius: 8px;
+}
+@keyframes load_bar {
+  0% {
+    background: #b19c76;
+  }
+  50% {
+    background: rgba(177, 156, 118, 0.9);
+  }
+  100% {
+    background: rgba(177, 156, 118, 0.8);
+  }
+}
+.home-view > .info > p {
+  font-size: 14px;
+  text-shadow: 1px 1px black;
+}
+.home-view > .info > .caption {
+  font-weight: bold;
+  font-size: 1rem;
+  text-shadow: 0.5px 0.5px black;
+  padding-top: 20px;
+  padding-bottom: 8px;
+}
+.home-view > .info > .warning {
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: #CCCCCC;
+  text-shadow: 0.5px 0.5px black;
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+.home-view > input {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 16px;
+  max-width: 620px;
+  width: 100%;
+  border: 1px solid #CCCCCC;
+  border-radius: 8px;
+  color: white;
+  background-color: transparent;
+}
+.home-view > input::placeholder {
+  color: white;
+}
+.home-view > button {
+  font-family: trajan-pro-3, serif;
+  max-width: 620px;
+  width: 100%;
+  cursor: pointer;
+  padding: 20px 12px 20px 12px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
+  text-shadow: 1.5px 1.5px black;
+  background-color: #990013;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+@media only screen and (max-width: 719px) {
+  .home-view > button {
+    width: 100%;
+  }
+}
+.home-view > button:hover {
+  background-color: rgba(153, 0, 19, 0.9);
+  text-shadow: 1px 1px black;
+}
+.home-view > button:active {
+  background-color: rgba(153, 0, 19, 0.8);
+  text-shadow: 0px 0px black;
+}
+.home-view > .sns {
+  display: flex;
+  justify-content: space-between;
+  max-width: 620px;
+  width: 100%;
+  margin-top: 2rem;
+}
+.home-view > .sns > a {
+  font-weight: 500;
+  text-shadow: 1px 1px black;
+  color: white;
+  text-decoration: none;
+}
+.home-view > .sns > a:hover {
+  text-decoration: underline;
+}
+
