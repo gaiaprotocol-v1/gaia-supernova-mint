@@ -38,7 +38,7 @@ export default class Landing implements View {
 
         BodyNode.append(
             (this.container = el(".home-view",
-                el("h1", msg("TITLE")),
+                el("img.logo", { src: "/images/logo.png", alt: "super nova logo" }),
                 el(".price", msg("MINT_PRICE_TITLE")),
                 select = el("select.language-select",
                     el("option", "한국어 🇰🇷 ", { value: "ko" }),
@@ -49,7 +49,6 @@ export default class Landing implements View {
                         },
                     },
                 ),
-                el("img.logo", { src: "/images/logo.png", alt: "super nova logo" }),
                 el(".mint-info",
                     this.mintStatus = el(".progress-text"),
                     this.mintCount = el(".progress-text"),

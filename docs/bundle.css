@@ -436,7 +436,7 @@ body {
   font-size: 4rem;
   text-shadow: 2px 2px black;
   padding-top: 4rem;
-  color: #990013;
+  color: linear-gradient(to right, #990013, #8ca6ce);
 }
 .home-view > .caption {
   font-weight: 300;
