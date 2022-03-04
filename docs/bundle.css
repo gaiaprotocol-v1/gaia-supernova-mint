@@ -194,7 +194,7 @@ body {
   width: 90%;
   margin: auto;
   border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #000000;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .dialogue.alert > h2 {
@@ -232,7 +232,7 @@ body {
   width: 90%;
   margin: auto;
   border-radius: 4px;
-  background-color: white;
+  background-color: black;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .dialogue.confirm > h2 {
@@ -270,7 +270,7 @@ body {
   width: 90%;
   margin: auto;
   border-radius: 4px;
-  background-color: white;
+  background-color: black;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .dialogue.prompt > h2 {
@@ -326,7 +326,7 @@ body {
   width: 90%;
   margin: auto;
   border-radius: 4px;
-  background-color: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: 0px 4px 4px #000000;
 }
 .connect-wallet-popup > h2 {
   font-size: 24px;
@@ -378,7 +378,7 @@ body {
   width: 90%;
   margin: auto;
   border-radius: 4px;
-  background-color: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: 0px 4px 4px #000000;
 }
 .klip-qr-popup > h2 {
   font-size: 24px;
