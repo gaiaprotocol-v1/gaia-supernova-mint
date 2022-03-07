@@ -24,7 +24,6 @@ export default class Landing implements View {
     private container: DomNode;
     private interval: any;
 
-    private blockNumber: DomNode;
     private klayBalance: DomNode;
     private passCount: DomNode;
     private mintCount: DomNode;
@@ -57,8 +56,6 @@ export default class Landing implements View {
                     this.bar = el(".progress__bar"),
                 ),
                 el(".info",
-                    el(".caption", msg("BLOCK_TITLE")),
-                    this.blockNumber = el("p", "..."),
                     el(".caption", msg("ADDRESS_TITLE")),
                     this.walletAddress = el("p", "..."),
                     el(".caption", msg("KLAY_AMOUNT_TITLE")),
@@ -108,10 +105,6 @@ export default class Landing implements View {
         }
     }
 
-    private async loadBlockNumber() {
-        this.blockNumber.empty().appendText(`${await Klaytn.loadBlockNumber()}`);
-    }
-
     private async loadStatus() {
         this.mintStatus.empty().appendText(this.status);
         this.passCount.empty().appendText("1");
@@ -121,7 +114,6 @@ export default class Landing implements View {
 
         this.loadStatus();
         this.loadBalance();
-        this.loadBlockNumber();
 
         const d = 0;
         this.bar.style({ width: `${d / this.TODAY_COUNT * 100}%` });
