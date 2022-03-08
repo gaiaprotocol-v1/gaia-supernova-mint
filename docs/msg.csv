@@ -4,7 +4,7 @@ MINT_PRICE_TITLE,"Mint Price: 1,000 KLAY","Mint Price: 1,000 KLAY"
 BLOCK_TITLE,블록넘버,Block Number
 ADDRESS_TITLE,주소,Wallet Address
 KLAY_AMOUNT_TITLE,클레이 수량,Klay amount
-WHITELIST_TITLE,화이트리스트,Whitelist
+WHITELIST_TITLE,VIP PASS,VIP PASS
 WHITELIST_DESC,민팅은 트랜잭션당 1개까지 가능하다.,Minting can be up to one per transaction.
 MINT_BUTTON,Super Nova,Super Nova
 HOMEPAGE_BUTTON,Visit Homepage,Visit Homepage
@@ -19,7 +19,7 @@ CONNECT_WALLET_BUTTON1,카이카스 설치,Install Kaikas
 CONNECT_WALLET_BUTTON2,카카오톡 클립으로 연결,Connect with Kakao Talk Klip
 CONNECT_WALLET_BUTTON3,연결하지 않고 둘러보기,Explore without Wallet Connection
 MINT_STATUS_TITLE1,민팅 대기중,Waiting for the mint
-MINT_STATUS_TITLE2,화이트리스팅 민팅 중,Whitelist Minting in Prgoress
+MINT_STATUS_TITLE2,VIP PASS 민팅 중,VIP PASS Minting in Prgoress
 MINT_STATUS_TITLE3,퍼블릭 민팅 중,Public Minting in Progress
 MINT_STATUS_TITLE4,민팅 종료,End of Mint
 CONFIRM_BUTTON,확인,Confirm
