@@ -498,7 +498,6 @@ body {
   width: 0%;
   background: #990013;
   border-radius: 8px;
-  animation: load_bar 5s infinite alternate;
 }
 .home-view > .progress > .bar-step {
   left: 41.5%;
@@ -524,22 +523,11 @@ body {
 }
 .home-view > .progress > .bar-step > .line {
   float: right;
-  background: #b19c76;
+  background: #990013;
   box-shadow: 1px 1px black;
   height: 45px;
   width: 1px;
   border-radius: 8px;
-}
-@keyframes load_bar {
-  0% {
-    background: #b19c76;
-  }
-  50% {
-    background: rgba(177, 156, 118, 0.9);
-  }
-  100% {
-    background: rgba(177, 156, 118, 0.8);
-  }
 }
 .home-view > .info > p {
   font-size: 14px;
