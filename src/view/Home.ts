@@ -5,6 +5,9 @@ import { View, ViewParams } from "skyrouter";
 import BrowserInfo from "../BrowserInfo";
 import CommonUtil from "../CommonUtil";
 import Alert from "../component/dialogue/Alert";
+import GaiaKronosContract from "../contracts/GaiaKronosContract";
+import GaiaSupernovaContract from "../contracts/GaiaSupernovaContract";
+import SupernovaMinterContract from "../contracts/SupernovaMinterContract";
 import Klaytn from "../klaytn/Klaytn";
 import Wallet from "../klaytn/Wallet";
 
@@ -102,12 +105,23 @@ export default class Landing implements View {
 
             const balance = await Klaytn.balanceOf(address);
             this.klayBalance.empty().appendText(utils.formatEther(balance!));
+
+            const passCount = (await GaiaKronosContract.balanceOf(address)).toNumber();
+            this.passCount.empty().appendText(`${passCount}`)
         }
     }
 
     private async loadStatus() {
+        if (await SupernovaMinterContract.initialSale() === true) {
+            this.status = this.STATUS.WhitelistMinting;
+        } else if (await SupernovaMinterContract.publicSale() === true) {
+            this.status = this.STATUS.PublicMinting;
+        } else if ((await GaiaSupernovaContract.totalSupply()).eq(1000)) {
+            this.status = this.STATUS.Ending;
+        } else {
+            this.status = this.STATUS.Waiting;
+        }
         this.mintStatus.empty().appendText(this.status);
-        this.passCount.empty().appendText("1");
     }
 
     private async progress() {
@@ -115,7 +129,7 @@ export default class Landing implements View {
         this.loadStatus();
         this.loadBalance();
 
-        const d = 0;
+        const d = (await GaiaSupernovaContract.totalSupply()).toNumber();
         this.bar.style({ width: `${d / this.TODAY_COUNT * 100}%` });
         this.mintCount.empty().appendText(`${d}/${this.TODAY_COUNT}`);
     }
