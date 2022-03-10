@@ -69,18 +69,10 @@ export default class Landing implements View {
                 ),
                 el("button", msg("MINT_BUTTON"), {
                     click: async () => {
-                        let count = 1;
-                        if (isNaN(count)) { count = 1; }
                         if (this.status === this.STATUS.WhitelistMinting) {
-                            if (count > 5) {
-                                new Alert(msg("ERROR_POPUP_TITLE"), msg("ERROR_ALERT_DESC4"));
-                            } else {
-                            }
+                            await SupernovaMinterContract.initialMint(1);
                         } else if (this.status === this.STATUS.PublicMinting) {
-                            if (count > 10) {
-                                new Alert(msg("ERROR_POPUP_TITLE"), msg("ERROR_ALERT_DESC5"));
-                            } else {
-                            }
+                            await SupernovaMinterContract.publicMint(1);
                         } else {
                             new Alert(msg("ERROR_POPUP_TITLE"), msg("MINT_ERROR_POPUP_DESC"));
                         }
