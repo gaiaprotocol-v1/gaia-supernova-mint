@@ -42,7 +42,7 @@ class SupernovaMinterContract extends Contract {
                 if (balance.lt(price)) {
                     new Alert(msg("ERROR_POPUP_TITLE"), msg("ERROR_ALERT_DESC3"));
                 } else {
-                    await this.runWalletMethodWithValue(price, "initialMint", count);
+                    await this.runWalletMethodWithValue(price, "initialMint");
                     setTimeout(() => {
                         new Alert(msg("SUCCESS_ALERT_TITLE"), msg("SUCCESS_ALERT_DESC"));
                     }, 2000);
@@ -63,7 +63,7 @@ class SupernovaMinterContract extends Contract {
                 if (balance.lt(price)) {
                     new Alert("오류", "Klay가 부족합니다.");
                 } else {
-                    await this.runWalletMethodWithValue(price, "publicMint", count);
+                    await this.runWalletMethodWithValue(price, "publicMint");
                     setTimeout(() => {
                         new Alert("민팅 성공!", "민팅에 성공했습니다. 민팅한 NFT는 오픈씨에서 확인이 가능합니다.");
                     }, 2000);
